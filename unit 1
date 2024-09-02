@@ -1,0 +1,230 @@
+# program-1: Find only one card, neigher king not spades from the deck
+cards = 52
+kings = 4
+shades = 13
+kingsAndShades = 1
+
+totalKingsShades = shades + kings - kingsAndShades
+
+choosenCard = cards - totalKingsShades
+
+possibility = choosenCard/cards
+
+print("*********************************************************************")
+print(f"Possibility of neighter king not spades is {possibility:.4f}")
+print("*********************************************************************")
+
+
+
+
+#program-2:find sum of n natural number
+n = int(input("Enter any number:"))
+sum = 0
+for i in range(n+1):
+    sum = sum + i
+print("*********************************************************************")
+print(sum)
+print("*********************************************************************")
+
+
+
+
+#program-3: extracting field and slice roll number
+rno = 'CS072024'
+sliceDept = rno[0:2]
+sliceRno = rno[2:-1]
+
+print("*********************************************************************")
+print("After slice Deparment: {}".format(sliceDept))
+print("After slice roll no: {}".format(sliceRno))
+print("*********************************************************************")
+
+
+
+
+
+
+
+
+
+#program-4: word shuffling
+sentence = "Gujrat vidyapith is great college"
+word1 = sentence[0:6]
+word2 = sentence[7:17]
+word3 = sentence[17:19]
+word4 = sentence[20:25]
+word5 = sentence[26:33]
+
+print("possible sentences is given below:")
+print("*********************************************************************")
+print(word3,word4,word2,word1,word5)
+print(word2,word1,word3,word5,word4)
+print(word1,word3,word5,word2,word4)
+print(word4,word2,word1,word3,word4)
+print(word5,word3,word4,word2,word1)
+
+
+
+#program-5 check blood group matched or not
+bloodGroup = input("Enter blood group:").split()
+
+a = bloodGroup[0]
+b = bloodGroup[1]
+
+if(a == b):
+    print("*********************************************************************")
+    print("Blood group match")
+    print("*********************************************************************")
+else:
+    print("*********************************************************************")
+    print("Blood group doesn't match")
+    print("*********************************************************************")
+
+
+
+
+
+
+
+
+
+
+#6 find the student from roll number may be in capital or small letter
+
+student = input("Enter your Roll no:")
+
+if(student[0]=='c' or student[0]=='C' and student[1]=='s' or student[1]=='S'):
+    print("*********************************************************************")
+    print("This is Computer Science student")
+    print("*********************************************************************")
+else:
+    print("*********************************************************************")
+    print("This is not Computer Science student")
+    print("*********************************************************************")
+
+
+
+
+
+
+#6 find the student from roll number may be in capital or small letter
+
+student = input("Enter your Roll no:")
+
+if(student[0]=='c' or student[0]=='C' and student[1]=='s' or student[1]=='S'):
+    print("*********************************************************************")
+    print("This is Computer Science student")
+    print("*********************************************************************")
+else:
+    print("*********************************************************************")
+    print("This is not Computer Science student")
+    print("*********************************************************************")
+
+
+
+#program-8 input subject marks and if student pass then find percentage
+sub1=int(input("Enter subject 1 marks:"))
+sub2=int(input("Enter subject 2 marks:"))
+sub3=int(input("Enter subject 3 marks:"))
+sub4=int(input("Enter subject 4 marks:"))
+sub5=int(input("Enter subject 5 marks:"))
+
+if(sub1<40 or sub2<40 or sub3<40 or sub4<40 or sub5<40):
+    print("Student is fail...")
+else:
+    percentage = (sub1+sub2+sub3+sub4+sub5)/5
+    print("Student is pass...")
+    #print(percentage)
+    print("Percentage of student:{}".format(percentage))
+
+
+
+n1 = 0
+n2 = 1
+number = int(input("Enter any number: "))
+
+print("Fibonacci series:",end = " ")
+# print("Fibonacci series up to", number, "terms:")
+
+print(n1, end=" ")
+print(n2, end=" ")
+
+for x in range(2, number):
+    n3 = n1 + n2
+    print(n3, end=" ")
+    n1 = n2
+    n2 = n3
+
+
+
+# #program-10 for even number divide by 2 
+no=int(input("Enter Any Number:"))
+print(no,end=" ")
+while(no!=1):
+    if(no%2==0):
+        no=int(no/2)
+        print(no,end=" ")
+    else:
+        no=(no*3)+1
+        print(no,end=" ")
+
+
+
+#program-11 check number is prime or not
+
+num = int(input("Enter any number:"))
+# print((num//2)+1)
+
+if num > 1:
+
+    for i in range(2, (num//2)+1):
+        if (num % i) == 0:
+            print("*********************************************************************")
+            print(num, "is not a prime number")
+            print("*********************************************************************")
+            break
+    else:
+        print("*********************************************************************")
+        print(num, "is a prime number")
+        print("*********************************************************************")
+else:
+    print("*********************************************************************")
+    print(num, "is not a prime number")
+    print("*********************************************************************")
+
+
+
+
+
+birthDates = {'ramesh':'10/02/05','keval':'06/12/03','hiten':'25/08/03','bhargav':'01/01/01','jayesh':'12/12/12'}
+
+months = {'01':'January','02':'February','03':'March','04':'April','05':'May','06':'June','07':'July','08':'August','09':'September','10':'October','11':'November','12':'December'}
+
+print("*********************************************************************")
+for name,date in birthDates.items():
+    # print(name,date)
+    getMonth = date.split('/')
+
+    if getMonth[1] in months:
+        print(name,":",months.get(getMonth[1]))
+    
+print("*********************************************************************")
+
+
+
+
+
+
+price = int(input('Enter your Price: '))
+deno1, deno2, deno3 = map(int, input('Denominations: ').split())
+print("Can you form", price, "exactly using", deno1, deno2, deno3, "?")
+for d1 in range(0, 1 + price // deno1):
+    for d2 in range(0, 1 + price // deno2):
+        for d3 in range(0, 1 + price // deno3):
+            if d1 * deno1 + d2 * deno2 + d3 * deno3 == price:
+                print(d1, d2, d3)
+else:
+    print('No') 
+
+
+
